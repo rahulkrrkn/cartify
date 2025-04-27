@@ -1,0 +1,139 @@
+/* Search container */
+.navCenter {
+  margin: 0 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+.search-bar-container input {
+  outline: none;
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+/* Icons inside search */
+.search-icons {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.search-icon,
+.close-icon {
+  cursor: pointer;
+  font-size: 18px;
+  color: #7618f1;
+}
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  border-top: none;
+  z-index: 10;
+  /* display: none; */
+  /* max-height: 400px; */
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.suggestions.show {
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestions h4 {
+  /* margin-bottom: 8px; */
+  font-size: 14px;
+  color: #2874f0;
+}
+
+.suggestions ul {
+  list-style: none;
+}
+
+.suggestions ul li {
+  /* padding: 5px 0; */
+  cursor: pointer;
+  color: #333;
+  transition: background 0.2s;
+}
+
+.suggestions ul li:hover {
+  background: #f0f0f0;
+}
+.nevProductCart {
+  display: flex;
+  align-items: center;
+  /* border: #ebeaea 1px solid; */
+  border-bottom: #ebeaea 1px solid;
+  border-radius: 10px;
+}
+
+.navProductDetail {
+  color: black;
+}
+/* .navProductImage{
+} */
+.navProductImage img {
+  width: 50px;
+  height: 50px;
+}
+.navProductDetail {
+  margin-left: 10px;
+}
+#suggestionsBox {
+  max-height: calc(100vh - 50px);
+  display: none;
+}
+#closeSearch {
+  display: none;
+}
+/* Hide search bar on mobile */
+@media (max-width: 768px) {
+  .search-bar-container {
+    left: 0;
+    max-width: 100%;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    display: none;
+  }
+  /* .mobile-search-icon {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+  } */
+}
+
+/* Show search bar on desktop */
+@media (min-width: 769px) {
+  #searchIcon {
+    display: none;
+  }
+
+  .search-bar-container {
+    display: flex;
+  }
+}

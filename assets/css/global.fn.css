@@ -1,0 +1,269 @@
+:root {
+  --btnBgClr1: #007bff;
+  --btnBgClr1: #7618f1;
+  --btnBgClr2: #ff9800;
+  --btnBgClr3: #28a745;
+  --btnBgClr4: #ff5c39;
+
+  --btnClr1: #ffffff;
+  --btnClr2: #ffffff;
+  --btnClr3: #ffffff;
+  --btnClr4: #ffffff;
+
+  /* Shadow Colors */
+  --shadowSoft: rgba(0, 0, 0, 0.1);
+  --shadowMedium: rgba(0, 0, 0, 0.2);
+  --shadowDark: rgba(0, 0, 0, 0.3);
+
+  /* Alert & Status Colors */
+  --success: #28a745;
+  --warning: #ff9800;
+  --danger: #e63946;
+  --info: #2580e6;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  overflow-x: hidden;
+  margin-top: 50px;
+  background-color: var(--BgColor);
+  color: var(--NavbarText);
+}
+h1{
+  font-size: 3.6rem;
+}
+h2{
+  font-size: 3rem;
+}
+h3{
+  font-size: 2.4rem;
+}
+h4{
+  font-size: 2.0rem;
+}
+h5{
+  font-size: 1.8rem;
+}
+h6{
+  font-size: 1.6rem;
+}
+p{
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+
+
+
+#mainBody {
+  padding-top: 0px;
+}
+
+/* Buttons */
+/* General Button Styles */
+.btn,
+button {
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 15px var(--shadowMedium);
+  cursor: pointer;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  /* cursor: pointer; */
+  position: relative;
+  /* margin: 0.625rem; */
+  margin-top: 1.6rem;
+  margin-bottom: 2.4rem;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  vertical-align: middle;
+  line-height: 1.4;
+}
+.btn + .btn {
+  margin-left: 1.6rem;
+}
+
+/* Hover Effect */
+.btn:hover,
+button:hover {
+  transform: scale(1.05);
+  z-index: 3;
+  box-shadow: 0px 6px 20px var(--shadowDark);
+}
+
+/* Shine Effect */
+.btn::before,
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--shadowSoft);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.btn:hover::before,
+button:hover::before {
+  transform: scaleX(1);
+}
+
+/* Disabled Button */
+button:disabled,
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background: #b0b0b0 !important;
+  color: #666 !important;
+  box-shadow: none;
+  transform: none;
+}
+
+.btnP1 {
+  background-color: var(--btnBgClr1);
+}
+.btnP2 {
+  background-color: var(--btnBgClr2);
+}
+.btnP3 {
+  background-color: var(--btnBgClr3);
+}
+.btnP4 {
+  background-color: var(--btnBgClr4);
+}
+.btnS1 {
+  border: 2px solid var(--btnBgClr1);
+  color: var(--btnBgClr1);
+}
+.btnS2 {
+  border: 2px solid var(--btnBgClr2);
+  color: var(--btnBgClr2);
+}
+.btnS3 {
+  border: 2px solid var(--btnBgClr3);
+  color: var(--btnBgClr3);
+}
+.btnS4 {
+  border: 2px solid var(--btnBgClr4);
+  color: var(--btnBgClr4);
+}
+.btnT1 {
+  color: var(--btnBgClr1);
+}
+.btnT2 {
+  color: var(--btnBgClr2);
+}
+.btnT3 {
+  color: var(--btnBgClr3);
+}
+.btnT4 {
+  color: var(--btnBgClr4);
+}
+
+
+#message,
+.message {
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+  display: inline-block;
+  width: 100%;
+}
+.successMsg, .success {
+  background: var(--success);
+  color: white;
+}
+.dangerMsg,
+.errorMsg , .error {
+  background: var(--danger);
+  color: white;
+}
+.warningMsg {
+  background: var(--warning);
+  color: black;
+}
+.infoMsg {
+  background: var(--info);
+  color: white;
+}
+
+/* Flex */
+.flexCenterSb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flexHCenter {
+  display: flex;
+  align-items: center;
+}
+.flex {
+  display: flex;
+}
+.flex-dirRow {
+  flex-direction: row;
+}
+.flex-dirCol {
+  flex-direction: column;
+}
+.dn {
+  display: none;
+}
+/* Text */
+.textCenter {
+  text-align: center;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #0000c2;
+}
+
+a:visited {
+  color: white;
+}
+
+/* Width */
+.width90 {
+  width: 90%;
+}
+img {
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.4rem;
+  }
+}

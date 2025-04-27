@@ -1,0 +1,100 @@
+.containerMain {
+  /* background: linear-gradient(135deg, #0463ca, #578fca); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  margin: 0;
+}
+.input-group > span {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+
+.container {
+  background: var(--secondaryClr);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+}
+
+h2 {
+  color: #0463ca;
+  margin-bottom: 10px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #0463ca;
+  box-shadow: 0 0 8px rgba(4, 99, 202, 0.3);
+}
+
+.input-group .icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  cursor: pointer;
+}
+
+.message {
+  font-size: 14px;
+  margin-bottom: 5px;
+  text-align: left;
+  padding-left: 5px;
+}
+
+
+.strength-meter {
+  height: 5px;
+  width: 100%;
+  border-radius: 3px;
+  margin-top: 5px;
+  transition: 0.3s;
+}
+
+.weak {
+  background: red;
+}
+
+.medium {
+  background: orange;
+}
+
+.strong {
+  background: green;
+}
+
+.strength-message {
+  font-size: 14px;
+  text-align: left;
+  margin-top: 5px;
+  font-weight: bold;
+}
+#resetPasswordForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  box-sizing: border-box;
+  width: 100%;
+}

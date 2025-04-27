@@ -1,0 +1,2 @@
+<?php Verify::seller(); ?>
+<?php

@@ -1,0 +1,408 @@
+:root {
+  --MainProductBG: #fff;
+  --MainProductTextColor: #000;
+  --MainProductInnerBox: #f8f9fa;
+  --MainProductBorder: #dee2e6;
+  --MainProductButtonColor: #fff;
+  --MainProductButtonbg: #007bff;
+  --MainProductButtonhoverbg: #0069d9;
+}
+
+.DarkMode {
+  --MainProductBG: #343a40;
+  --MainProductTextColor: #fff;
+  --MainProductInnerBox: #495057;
+  --MainProductBorder: #6c757d;
+  --MainProductButtonbg: #ff4081;
+  --MainProductButtonhoverbg: #c60055;
+  --MainProductButtonColor: #fff;
+}
+.AddnewProductMainDiv > h1 {
+  text-align: center;
+}
+.AddnewProductMainDiv > div {
+  border-radius: 5px;
+}
+
+.category{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.category input{
+background-color: #7618f1;
+color: white;
+border-radius: 3px;
+padding: 5px;
+border: none;
+/* margin-top:5px ; */
+font-size: 14px;
+}
+input:focus {
+    outline: none;
+}
+
+
+.MainProductSelectCategory {
+  background-color: var(--MainProductInnerBox);
+  display: flex;
+  justify-content: center;
+  /* align-items: flex-start; */
+  flex-wrap: wrap;
+}
+
+.MainProductSelectCategoryBox {
+  /* background-color: royalblue; */
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+  width: 250px;
+  text-align: center;
+}
+
+.MainProductSelectCategoryBox select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--MainProductBorder);
+  font-size: 16px;
+}
+
+.MainProductSelectCategoryBox img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--MainProductBorder);
+  margin-top: 10px;
+}
+
+.MainProductMainData {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  background-color: var(--MainProductInnerBox);
+}
+
+.MainProductMainData > div {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+  width: 100%;
+  background-color:rgb(189, 160, 232);
+}
+
+.MainProductMainData div label {
+  display: block;
+  margin: 5px;
+}
+
+.MainProductMainData > div > input[type="text"] {
+  width: 98%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--MainProductBorder);
+  /* height: 50px; */
+  font-size: 16px;
+}
+
+.MainProductMainData > div > textarea {
+  width: 98%;
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--MainProductBorder);
+  font-size: 16px;
+  height: 200px;
+}
+
+.MainProductExtraData {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+}
+
+.MainProductExtraData > div {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+  
+}
+
+.MainProductExtraData div > input[type="text"] {
+  width: 150px;
+  /* padding: 15px; */
+  border-radius: 5px;
+  border: 1px solid var(--MainProductBorder);
+  height: 40px;
+  font-size: 16px;
+  
+}
+
+.MainProductExtraData > div:last-child {
+  width: calc(100% - 400px);
+  min-width: 300px;
+}
+
+.MainProductExtraData div > textarea {
+  resize: vertical;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--MainProductBorder);
+  font-size: 16px;
+  /* background-color: #fb0c0c; */
+  width: 95%;
+  /* height: 50px; */
+}
+
+.MainProductDeliveryDetails {
+  background-color: var(--MainProductInnerBox);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+}
+
+.MainProductDeliveryDetails > div {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+  /* background-color: #0069d9; */
+  display: flex;
+  flex-direction: column;
+  background-color:rgb(189, 160, 232);
+}
+
+
+.MainProductDeliveryDetails > div input[value="No"] {
+  margin-left: 20px;
+}
+
+.MainProductDeliveryDetails p {
+  margin: 0px;
+}
+
+.MainProductDeliveryDetails > div > span {
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  flex-wrap: wrap;
+  margin: 10px 0px;
+  /* padding: 10px; */
+}
+
+.MainProductDeliveryDetails > div > span > label {
+  display: inline-block;
+}
+
+.MainProductDeliveryDetails > div > input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--MainProductBorder);
+  font-size: 16px;
+  width: 150px;
+  margin-top: 5px;
+}
+
+.MainProductVarityType {
+  background-color: var(--MainProductInnerBox);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color:rgb(189, 160, 232); */
+  flex-wrap: wrap;
+}
+
+.MainProductVarityType > div {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+  text-align: center;
+  background-color:rgb(189, 160, 232);
+}
+
+.MainProductVarityType > div > label {
+  display: block;
+  padding: 10px 0px;
+  
+}
+
+.MainProductVarityType select {
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--MainProductBorder);
+  font-size: 16px;
+  height: 40px;
+}
+
+.MainProductFixedDescriptionData {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--MainProductInnerBox);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+}
+
+.MainProductFixedDescriptionData > div {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+  background-color:rgb(189, 160, 232);
+}
+  /* width: 100%; */
+
+
+.MainProductFixedDescriptionData > div label {
+  display: block;
+}
+
+.MainProductFixedDescriptionData > div input[type="text"] {
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--MainProductBorder);
+  font-size: 16px;
+}
+
+.MainProductNextButton {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MainProductNextButton button {
+  background-color: #ff9800;
+  color: var(--MainProductButtonColor);
+  /* height: 40px; */
+  /* width: 130px; */
+  border-radius: 5px;
+  margin: 5px 15px;
+  /* font-size: larger; */
+  border: none;
+  padding: 10px;
+}
+
+.MainProductPaymentMethod {
+  background-color:rgb(189, 160, 232);;
+  margin: 10px;
+  padding: 10px;
+  padding-right: 30px;
+  border-radius: 10px;
+  border: 1px solid var(--MainProductBorder);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 480px) 
+
+{  
+  .category{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; 
+  }
+  .category input{
+    font-size: 20px;
+  }
+  
+  .MainProductMainData > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  }
+  .MainProductMainData div label{
+    font-size: 20px;
+  }
+
+  .MainProductMainData > div > input[type="text"] {
+    width: 95%;
+  }
+
+  .MainProductVarityType > div {
+    width: 100%;
+  }
+
+  .MainProductFixedDescriptionData > div {
+    width: 100%;
+  }
+
+  .MainProductFixedDescriptionData > div input[type="text"] {
+    width: 95%;
+  }
+
+  /* .MainProductExtraData > div:last-child {
+    width: 100%;
+  }
+   */
+
+}
+
+/* All Button Display none */
+.AddnewProductMainDiv > div:nth-child(4),
+.AddnewProductMainDiv > div:nth-child(5),
+.AddnewProductMainDiv > div:nth-child(6),
+.AddnewProductMainDiv > div:nth-child(7),
+.AddnewProductMainDiv > div:nth-child(8),
+.AddnewProductMainDiv > div:nth-child(9),
+.AddnewProductMainDiv > div:nth-child(10),
+.AddnewProductMainDiv > div:nth-child(11),
+.AddnewProductMainDiv > div:nth-child(12) {
+  display: none;
+}
+
+#MainProductCategoryData {
+  display: flex;
+  align-items: center;
+}
+
+#MainProductCategoryData i {
+  margin: 0px 5px;
+}
+
+.error {
+  /* color: red; */
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
+
+

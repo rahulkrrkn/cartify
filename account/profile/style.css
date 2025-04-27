@@ -1,0 +1,78 @@
+.container-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e97171;
+    border-radius: 20px; /* Softer corner radius */
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15); /* Adds shadow for better depth */
+    max-width: 400px; /* Limits the container width */
+    text-align: center;
+    
+}
+
+.container img {
+    border: 3px solid #fff; /* Lighter border to match background */
+    background-color: rgb(180, 199, 205);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Darker shadow for the image */
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px; /* Adds spacing between image and text */
+}
+
+.info > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0; /* Adds more spacing between items */
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.2); /* Slight transparent background for better readability */
+    width: 100%; /* Ensures the items fill the container width */
+    color: white;
+}
+
+h3 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    margin-top: 0px;
+    color: #fff;
+    font-size: 36px; /* Slightly larger font for h1 */
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 40px;
+        max-width: 100%; /* Make the container full-width on mobile */
+    }
+    
+    .container img {
+        width: 120px;
+        height: 120px; /* Smaller image on mobile */
+    }
+    
+    h1 {
+        font-size: 28px; /* Adjust font size on smaller screens */
+    }
+    
+    h3 {
+        font-size: 22px;
+    }
+    
+    .info > div {
+        font-size: 16px; /* Smaller text for the info section */
+    }
+}

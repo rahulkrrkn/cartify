@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Cartify Dashboard - Under Construction</title>
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="shortcut icon" href="Sign_in-removebg-preview.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            /* overflow-y:hidden; */
+
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        #main {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* M B C */
+        #back {
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to right, #9796f0, #fbc7d4);
+        }
+
+        /* M B B I */
+        #back img {
+            /* width: 100%; */
+            /* height: 100%; */
+            /* object-fit: cover; */
+
+            display: block;
+            margin: auto;
+            padding-top: 200px;
+            padding-left: 160px;
+        }
+
+        /* #main-img{ */
+        /* display: block; */
+        /* margin-top:auto; */
+        /* padding-top: 200px;
+    padding-left: 160px; */
+        /* } */
+
+
+
+        #top {
+            /* pointer-events: none; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #workingarea {
+            position: relative;
+            margin: 0 auto;
+            width: 80%;
+            height: 100vh;
+            max-width: 1920px;
+        }
+
+        /* T W A */
+        #nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 9px 0;
+        }
+
+        #nleft img {
+            height: 40px;
+            mix-blend-mode: multiply;
+        }
+
+        #nleft h4 {
+            /* padding-left: 20px; */
+        }
+
+        #nleft {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        #nright {
+            display: flex;
+            align-items: center;
+            gap: 90px;
+        }
+
+        #nav a {
+            pointer-events: all;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bolder;
+            text-transform: uppercase;
+            color: transparent;
+            font-family: 'Gilroy';
+            background-image: linear-gradient(to bottom, #5433ff, #000000);
+            -webkit-background-clip: text;
+            /* border: 1px solid #536976; */
+            /* border-radius: 5px; */
+
+        }
+
+
+        #hero {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+        }
+
+        #heroleft {
+            min-width: 50%;
+
+        }
+
+        #heroleft .elem {
+            height: 9vw;
+            overflow: hidden;
+        }
+
+        /* W T M */
+        #heroleft .elem h1 {
+            line-height: 0.9;
+            font-family: "Big Shoulders", sans-serif;
+            color: #dd5e89;
+            font-weight: 500px;
+            font-size: 8vw;
+            /* letter-spacing: 0.00em; */
+            /* letter-spacing: 10px; */
+            padding-top: 20px;
+        }
+
+        #heroleft button {
+            cursor: pointer;
+            pointer-events: all;
+            padding: 0.8vw 3vw;
+            font-size: 2.2vw;
+            font-family: "Big Shoulders Stencil", sans-serif;
+            margin-top: 2vw;
+            letter-spacing: 0.05em;
+            background-color: #bb377d;
+            /* color: #fbd3e9; */
+            /* background-color: #2cee0e;
+    color: #ec1673;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+     */
+        }
+
+        #heroleft button:hover {
+            background-color: #dd5e89;
+            /* color:white ; */
+        }
+
+        button a {
+            text-decoration: none;
+            color: #fbc7d4;
+        }
+
+        #heroright {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: 17%;
+            color: #aa076b;
+        }
+
+        #heroright p {
+            font-size: 14px;
+            text-align: right;
+            font-weight: 300;
+        }
+
+        #heroright #imagediv {
+            width: 100%;
+            height: 170px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            background-image: url("/cartify/assets/images/homePage/Sign_in-removebg-preview.png");
+            background-size: cover;
+            background-position: center;
+        }
+
+        #heroright p:nth-child(3) {
+            margin-bottom: 100px;
+        }
+
+        /* F P */
+        /* @import url('https://fonts.googleapis.com/css2?family=poppins:wght@300;500;600;700&display=swap'); */
+
+        .footer {
+            background-color: #151515;
+            padding: 80px 0;
+        }
+
+        .container {
+            max-width: 1170px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: #bbbbbb;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+
+        }
+
+        /* part2 */
+        .footer-col h4::before {
+
+            content: "";
+            position: absolute;
+            Left: 0;
+            bottom: -10px;
+            background-color: #E91E63;
+            width: 50px;
+            height: 2px;
+
+        }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #DDD;
+            display: block;
+
+            font-size: 16px;
+            font-weight: 300;
+            text-transform: capitalize;
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+        }
+
+        .footer-col ul li a:hover {
+            color: #FFF;
+            padding-left: 8px;
+        }
+
+        /* part3 */
+
+        .footer-col.social-links a {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            text-align: center;
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+
+        }
+
+        .footer-col.social-links a:hover {
+
+            color: #151515;
+            background-color: #FFF;
+
+        }
+
+        @media(max-width: 767px) {
+
+            .footer-col {
+                width: 50%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media(max-width: 574px) {
+            .footer-col {
+                width: 100%;
+            }
+        }
+
+        #kishan {
+            padding: 10px 20px;
+            background-color: #2cee0e;
+            color: #ec1673;
+            border: none;
+            cursor: pointer;
+
+            /* background-color: #ff523b; */
+            /* color: white; */
+            /* border: none; */
+            padding: 10px 20px;
+            font-size: 1rem;
+            /* cursor: pointer; */
+            border-radius: 5px;
+            /* width: 100%; */
+            transition: 0.3s ease;
+
+        }
+
+        #kishan:hover {
+            background-color: #ff3d2e;
+            color: white;
+        }
+
+        #buynow {
+            padding: 10px 20px;
+            background-color: #2cee0e;
+            color: #ec1673;
+            border: none;
+            cursor: pointer;
+
+            /* background-color: #ff523b; */
+            /* color: white; */
+            /* border: none; */
+            padding: 10px 20px;
+            font-size: 1rem;
+            /* cursor: pointer; */
+            border-radius: 5px;
+            /* width: 100%; */
+            transition: 0.3s ease;
+            /* padding-left: 10px; */
+            margin-left: 80px;
+        }
+
+        #buynow:hover {
+            background-color: #ff3d2e;
+            color: white;
+        }
+
+        /* search bar */
+
+        .search-bar {
+            width: 500px;
+            height: 50px;
+            background: #bb377d;
+            display: flex;
+            align-items: center;
+            border-radius: 40px;
+            padding: 10px 6px;
+        }
+
+        .search-bar input {
+            width: 500px;
+            height: 50px;
+            background: transparent;
+            flex: 1;
+            border: 1px solid transparent;
+            outline: none;
+            padding: 24px 20px;
+            font-size: 20px;
+            color: #fbd3e9;
+        }
+
+        ::placeholder {
+            color: #fbd3e9;
+        }
+
+        .search-bar button img {
+            margin-top: 5px;
+            width: 40px;
+            height: 40px;
+            border: 1px solid #fbd3e9;
+            border-radius: 50%;
+        }
+
+        .search-bar button {
+            border: 0px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background: #bb377d;
+            cursor: pointer;
+        }
+
+        /* this is part of product */
+        .row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .title {
+            text-align: center;
+            margin: 45px auto;
+            color: #222;
+            font-size: 2rem;
+            border-bottom: 3px solid #ff523b;
+            width: 450px;
+            margin-bottom: 70px;
+
+        }
+
+        .col-4 h4 {
+            text-align: left;
+            color: #000;
+            font-weight: 400;
+            font-size: 1.6rem;
+        }
+
+        .col-4 .rating {
+            color: #ff523b;
+            text-align: left;
+        }
+
+        .col-4 p {
+            color: #000;
+            text-align: left;
+            font-size: 1.3rem;
+        }
+
+        .col-4:hover {
+            transform: translateY(-5px);
+        }
+
+        .col-4 img {
+            width: 90%;
+            border: 3px solid #E91E63;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            aspect-ratio: 3/2;
+            object-fit: contain;
+
+        }
+
+        .col-4 {
+            flex-basis: 23%;
+            /* padding: 1rem; */
+            min-width: 200px;
+            margin-bottom: 1.5rem;
+            transition: 0.4sease;
+        }
+
+        /* by now button  */
+
+        .col-4 button {
+            margin-left: 0px;
+        }
+
+
+
+
+        #nav {
+            display: flex;
+            justify-content: space-around;
+
+            align-items: center;
+            /* justify-content: center; */
+        }
+
+
+        /* this is responsivenes area */
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="back">
+            <img src="/cartify/assets/images/homePage/wmremove-transformed.png" alt="not avalable">
+        </div>
+
+        <div id="top">
+            <div id="workingarea">
+                <div id="nav">
+                    <div id="nleft">
+                        <!-- <img src="/cartify/assets/images/homePage/Sign_in-removebg-preview.png" alt=""> -->
+                        <a href="/">HOME</a>
+                        <a href="/cartify/account/login-using-password/">SIGN IN</a>
+                    </div>
+                    <form action="https://www.google.com/search" method="get" class="search-bar">
+                        <input type="search" name="q" placeholder="Type to search">
+                        <a> <button type="submit"><img
+                                    src="/cartify/assets/images/homePage/logo search bar.jpg"></button></a>
+                    </form>
+                    <div id="nright">
+                        <a href="/">CONTACT</a>
+                        <a href="/cartify/user/cart">CART</a>
+                    </div>
+                    <!-- <div id="nleft">
+                        <img id="cart-icon" src="/cartify/assets/images/homePage/cartnav.svg" alt="">
+
+
+                    </div> -->
+                </div>
+                <div id="hero">
+                    <div id="heroleft">
+                        <div class="elem">
+                            <h1>Welcome to</h1>
+                        </div>
+                        <div class="elem">
+                            <h1>CARTIFY</h1>
+                        </div>
+                        <div class="elem">
+                            <h1>INDIA.</h1>
+                        </div>
+                        <a href="/cartify/user/products/"><button id="butto"> Explore Now</button></a>
+                    </div>
+                    <div id="heroright">
+                        <p>Online Cartify Store Green India.</p>
+                        <div id="imagediv">
+
+                        </div>
+                        <p>Buy Any Products On Very Reasonable Prices Online Cartift Store Green Mart Green India.</p>
+                        <p>Save your time save your money shop from our Cartify store. A good E-Comeres store can never
+                            be satisfied with their products until they can satisfy their customers
+
+                            We are the best distributors of premium quality Products items within your budget
+                            Good quality product can only be found in good stores. #good
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var KK = gsap.timeline()
+
+
+        KK.from("#nav", {
+            y: -100,
+            duration: 0.4,
+            delay: 0.3,
+            opacity: 0,
+            stagger: 0.5
+        })
+
+        KK.from(".elem h1, #butto", {
+            x: -100,
+            duration: 0.4,
+            opacity: 0,
+            blur: 1,
+            stagger: 0.5
+        })
+
+        KK.from("#imagediv", {
+            x: 50,
+            duration: 0.5,
+            opacity: 0,
+            blur: 1,
+            scale: 0,
+            stagger: 0.5
+        })
+
+        KK.from("#heroright p", {
+            x: 100,
+            duration: 0.4,
+            opacity: 0,
+            blur: 1,
+            stagger: 0.5
+        })
+
+
+        function addToCart() {
+            alert('Product added to cart! 😒😒😒');
+        }
+
+        //   add to cart
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+/* General Styles */
+/* body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  height: auto;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+} */
+
+/* Selected Address */
+#addressSelected {
+  width: 100%;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.9em;
+}
+
+/* Address Selection Box */
+.selectAddress {
+  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-height: 80vh; /* Adjust height dynamically */
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Allow scrolling when content exceeds height */
+  display: none;
+  z-index: 10;
+}
+
+
+
+.selectAddress h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+/* Address List */
+#addressList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Address Card */
+.info {
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 0.9em;
+}
+
+/* Contact Details */
+.contact {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact p {
+  margin: 2px 0;
+}
+
+/* Address Details */
+.address {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.address p {
+  margin: 2px 5px 2px 0;
+}
+
+/* Name Styling */
+#FullName {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/* Buttons */
+.info .btn {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 6px 12px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 480px) {
+  #addressList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .address-box,
+  .selectAddress {
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .info {
+    font-size: 0.85em;
+  }
+
+  .contact {
+    flex-direction: column;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+}

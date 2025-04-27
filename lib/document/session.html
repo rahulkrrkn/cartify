@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>How Cartify Handle Session </title>
+</head>
+
+<body>
+    <h1>How we hadled session in full detail </h1>
+    <!-- All session name must we start with CF that means Cartify -->
+    <!--  We have create 14 session for handle full website else are herically -->
+
+    <!-- 1. CFuserData for store user data from database -->
+    <!-- 2. CFsellerData for store seller data from database -->
+    <!-- 3. CFsupportData for store support data from database -->
+    <!-- 4. CFadminData for store admin data from database -->
+    <!-- 5. CFsuperadminData for store superadmin data from database -->
+    <!-- 6. CFglobalData for store global data that needed in internally but handle perfectly -->
+    <!-- 7. CFpublicData for store public data that needed in internally but handle perfectly -->
+    <!-- 1 to 7 are menuplated by senour developer -->
+
+
+    <!-- 8. CFuser for store user data that needed in internally -->
+    <!-- 9. CFseller for store seller data that needed in internally  -->
+    <!-- 10. CFsupport for store support data that needed in internally  -->
+    <!-- 11. CFadmin for store admin data that needed in internally  -->
+    <!-- 12. CFsuperadmin for store superadmin data that needed in internally  -->
+    <!-- 13. CFpublic for store public data that needed in internally -->
+    <!-- 14. CFglobal for store global data that needed in internally -->
+    <!-- 8 to 14 are menuplated by any developer  -->
+
+    <!-- 8 to 14 sno sesson name convension -->
+    <!-- We follow file based sesson name for example no 1 file name cartify/seller/products we give session name like $_SESSION["CFseller"]["products"]["session_name_work_type"] ["session_name_work_type"] this is varible as per need -->
+    <!-- We follow file based sesson name for example no2 file name cartify/seller/product/add-product/add-first-varity/ we give session name like  $_SESSION["CFseller"]["products_add-product_add-first-varity"]["session_name_work_type"] ["session_name_work_type"] this is varible as per need and UnderDash seprate the folders -->
+
+
+
+</body>
+
+</html>
+
+
+
+<!-- Now give me all types of sesson and its use and create explaned page for explaction -->
+<!-- i want detailed explanation page for my juner developer that how we hadled session with multiple exple and create each type of session-->
+<!-- Give me in HTML formet -->
+
+
+
+
+
+<!-- we create menly two type of session 1st CFuserData for store Data from databse it is more sqcure 2nd is CFuser for store user data that needed in internally the same type of both 1st and 2nd for seller support admin and public and public also have CFpublicData that store api calls data and secure help or improve performance -->
+<!-- in assoctive array of session like CFuser then follow file hiricy like $_SESSION["CFuser"]["product"] then after its session name  -->

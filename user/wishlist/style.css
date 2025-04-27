@@ -1,0 +1,209 @@
+:root {
+  --ViewBgClr: #ffffff;
+  --ViewText: #000000;
+  --ViewBGClr: #eeeaea;
+}
+
+.DarkMode {
+  --ViewBgClr2: #343a40;
+  --ViewText: #ffffff;
+  --ViewBGClr: #898787;
+}
+
+.allProducts {
+  background-color: var(--ViewBgClr);
+  color: var(--ViewText);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* padding:5px; */
+}
+
+.productCard {
+  margin: 5px;
+  background-color: var(--ViewBGClr);
+  /* height: 300px; */
+  width: 250px;
+  border-radius: 15px;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: first baseline;
+  padding: 0px 10px;
+  flex-direction: column;
+  height: fit-content;
+}
+
+.productImage {
+  width: 100%;
+  padding-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.productImage > img {
+  width: 220px;
+  height: 220px;
+  border: 3px solid white;
+  border-radius: 15px;
+  object-fit: cover;
+  object-position: center;
+  padding: 3px;
+}
+
+.wishlist {
+  /* margin-top: 10px; */
+  display: flex;
+  justify-content: right;
+  align-items: baseline;
+  width: 100%;
+  /* padding: 10px 0px; */
+}
+
+.wishlist i {
+    padding: 10px 0px;
+    margin: 5px 0px 0 0;
+}
+
+.productName {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.productName p {
+  padding: 0;
+  margin: 5px;
+}
+
+.variety p {
+  color: rgb(99, 97, 97);
+  font-size: 15px;
+  margin: 8px 0 5px 0;
+}
+
+.TotalRatings {
+  display: flex;
+  align-items: center;
+}
+
+.TotalRatings p {
+  /* margin: 5px 0 0 0; */
+  margin: 0;
+}
+
+.rating {
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  width: 100%;
+}
+
+.starRating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 5px;
+  margin: 0px 10px 0px 0px;
+  background-color: rgb(21, 190, 2);
+  border-radius: 5px;
+  color: #ffffff;
+  height: 25px;
+  width: 40px;
+}
+
+.price,
+.price > div {
+  display: flex;
+  align-items: center;
+}
+
+.price p {
+  padding: 0 2px;
+  margin: 10px 0;
+}
+
+.buyingPrice p {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0 10px 0 0;
+}
+
+.mrp {
+  color: rgb(99, 97, 97);
+}
+
+.discount {
+  color: rgb(38, 146, 26);
+}
+
+.mrp p {
+  padding: 0 10px 0 0;
+}
+
+.deliveryCharge p {
+  margin: 0px 0 10px 0;
+}
+
+.cartAndBuy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#wishlist {
+  display: none;
+}
+
+.cartAndBuy > button {
+  font-size: 15px;
+  background-color: red;
+  color: #ffffff;
+  margin: 0 0;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+
+@media screen and (max-width: 480px) {
+  .rating {
+    display: flex;
+    width: auto;
+    /* display: inline; */
+  }
+
+  .View form {
+    padding: 0 10px 10px 10px;
+    border: #000000 solid 1px;
+    width: 95%;
+    margin: 5px 0;
+    border-radius: 10px;
+  }
+
+  .productCard {
+    width: 100%;
+    display: inline;
+  background-color:--ViewBGClr;
+  }
+
+  .productImage {
+    width: 115px;
+    height: 115px;
+    display: inline;
+    float: left;
+    margin-right: 10px;
+  }
+
+  .productImage > img {
+    width: 100px;
+    height: 100px;
+  }
+
+  
+
+  .wishlist {
+    width: 99%;
+  }
+}

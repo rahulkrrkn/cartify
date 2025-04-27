@@ -1,0 +1,269 @@
+:root {
+  --NavbarCartCount: red;
+}
+
+.MainNav {
+  background-color: var(--NavbarBackground);
+  height: 49px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+  user-select: none;
+  position: fixed;
+  top: 0;
+  /* left: 0; */
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); */
+  /* border: #000000 solid ; */
+  /* border-bottom: var(--NavbarText) solid 1px; */
+}
+.MainNav A {
+  text-decoration: none;
+}
+.NavElement {
+  margin: 15px 0px;
+}
+.NavElement > ul {
+  margin: 0px 0px 0px 25px;
+  padding: 0;
+}
+#NavLogoSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#NavLogoSection > a {
+  overflow: hidden;
+  height: 48px;
+}
+#NavLogoImg {
+  height: 50px;
+  border-radius: 5px;
+  cursor: default;
+  margin-left: 5px;
+}
+#NavProfileIcon {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-right: 5px;
+  overflow: hidden;
+  padding: 2px;
+  border: 2px solid var(--NavbarActiveText);
+}
+
+#NavProfileIcon img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#NavModeBtn,
+.NavMenuBtn,
+#NavBellIcon {
+  color: var(--NavbarActiveElementIcon);
+  width: 30px;
+}
+#NavBtnSection {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* For Nav Bar Elements */
+#NavElementSection {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+#NavElementSection > ul {
+  background-color: var(--NavbarElementBG);
+  color: var(--NavbarElementText);
+  padding: 10px 0px 20px 20px;
+  margin: 0;
+  width: 300px;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  animation: ElementSlide 0.3s;
+  scrollbar-width: thin;
+  scrollbar-color: var(--NavbarElementBlankSpace);
+  /* border-right: var(--NavbarText) solid 2px; */
+}
+
+@keyframes ElementSlide {
+  0% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+#NavElementSection p i:first-child {
+  width: 30px;
+  /* background-color: #d0d0d0; */
+}
+#NavElementSection p span {
+  cursor: pointer;
+  display: inline-block;
+  width: 200px;
+}
+
+#NavElementSection ul ul {
+  display: none;
+}
+
+#NavElementSection li.HideOtherElement > ul {
+  display: block;
+  animation: ElementSlide 0.3s;
+}
+
+#NavElementSection > ul > li > ul > li {
+  display: flex;
+  align-items: center;
+}
+
+#NavElementSection > ul > li > ul > li i {
+  width: 30px;
+  padding-left: 5px;
+}
+
+#NavElementSection > ul > li > ul > li {
+  margin: 10px 0px;
+}
+#NavElementSection div {
+  background-color: var(--NavbarElementBlankSpace);
+  width: calc(100% - 300px);
+  animation: ElementSlidediv 0.5s;
+}
+@keyframes ElementSlidediv {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: var(--NavbarElementBlankSpace);
+  }
+}
+#NavElementSection li {
+  list-style: none;
+  /* color: white; */
+}
+#NavElementSection a {
+  color: var(--NavbarElementText);
+}
+.HideOtherElement i {
+  color: var(--NavbarActiveElementIcon);
+}
+#MainBody {
+  margin-top: 50px;
+  /* padding: 5px; */
+}
+
+.NavMenuPhone {
+  padding-left: 5px;
+}
+
+#CartCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8.5px;
+  right: -1px;
+  /* background-color: var(--NavbarCartCountBG); */
+  color: var(--NavbarCartCount);
+  border-radius: 50%;
+  padding: 0px 5px;
+  font-size: 10px;
+  /* font-weight: bold; */
+  height: 20px;
+  width: 50px;
+}
+#WishlistCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 12px;
+  right: 43px;
+  /* background-color: var(--NavbarCartCountBG); */
+  /* color: var(--NavbarWishlistCount); */
+  color: var(--NavbarCartCount);
+  border-radius: 50%;
+  padding: 0px 5px;
+  font-size: 10px;
+  /* font-weight: bold; */
+  height: 20px;
+  width: 50px;
+}
+
+@media (max-width: 600px) {
+  /* Mobile */
+  #NavBtnSection {
+    gap: 5px;
+  }
+  .NavMenuDesktop {
+    display: none;
+  }
+
+  #WishlistCount {
+    right: 73px;
+  }
+  #CartCount {
+    right: 34px;
+  }
+}
+
+@media (min-width: 600px) {
+  /* Desktop */
+  .WindowsSideBar {
+    margin-left: 301px;
+    animation: WindowsSideBarAnimation 0.3s;
+  }
+  .NavMenuPhone {
+    display: none;
+  }
+  .NavMenuDesktop {
+    margin-left: 10px;
+    margin-right: 20px;
+  }
+  #NavElementSection {
+    width: 300px;
+  }
+  @keyframes WindowsSideBarAnimation {
+    0% {
+      transform: translateX(-320px);
+    }
+
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  #NavElementSection div {
+    display: none;
+  }
+}
+#NavBtnSection i {
+  color: white;
+  font-size: 2.5rem;
+}
+.searchBar{
+  width: 40%;
+
+}
+.searchBar input{
+  width: 100%;
+  /* display: none; */
+}
+
+@media (min-width: 600px) {
+  .searchBtn {
+    display: none;
+  }
+  
+}

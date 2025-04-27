@@ -1,0 +1,163 @@
+/* CSS remains unchanged for design */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+#mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #5e7fe0, #945db7);
+}
+
+.login-container {
+  margin: 0 10px;
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-image {
+  display: none;
+  flex: 1;
+  background: url("./Login-Image.webp") no-repeat center center/cover;
+}
+
+.login-form {
+  flex: 1;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #2c2c2c;
+  font-size: 24px;
+}
+
+.login-form label {
+  align-self: flex-start;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #2c2c2c;
+}
+
+.login-form input {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+  border-color: #5e7fe0;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: rgb(40, 85, 222);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: rgb(70, 110, 232);
+}
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.login-links a {
+  text-decoration: none;
+  color: rgb(30, 70, 190);
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.login-links a:hover {
+  color: rgb(0, 72, 255);
+}
+
+.otp-login,
+.google-signin {
+  height: 50px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.otp-login a,
+.google-signin button {
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.google-signin button {
+  background-color: #c43d32;
+}
+
+.google-signin button:hover {
+  background-color: #a53126;
+}
+
+.otp-login a {
+  background-color: #2e873c;
+  text-decoration: none;
+}
+
+.otp-login a:hover {
+  background-color: #256b30;
+}
+
+@media screen and (min-width: 768px) {
+  .login-image {
+    display: block;
+  }
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  padding-right: 40px;
+}
+
+.password-container #togglePassword {
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: larger;
+}

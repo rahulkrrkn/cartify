@@ -1,0 +1,176 @@
+:root {
+  --AddVarityBackground: #ffffff;
+  --AddVarityText: #000000;
+  --AddVarityElementBorder: #a7a6a6;
+  --AddVarityBGClr: #ebcccc;
+  --AddVarityInputBorder: #f53082;
+  --AddVarityButtonbg: #f53082;
+  --AddVarityButtonColor: #ffffff;
+}
+
+.DarkMode {
+  --AddVarityBackground: #343a40;
+  --AddVarityText: #ffffff;
+  --AddVarityElementBorder: #898787;
+  --AddVarityBGClr: #000000;
+  --AddVarityInputBorder: #6763f4;
+  --AddVarityButtonbg: #6763f4;
+  --AddVarityButtonColor: #ffffff;
+}
+
+
+
+.AlreadyFilledData {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--BoxBGClr);
+  border: solid 1px var(--AddVarityElementBorder);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  flex-wrap: wrap;
+}
+
+.AlreadyFilledData > div {
+  display: flex;
+  border: solid 1px var(--AddVarityElementBorder);
+  border-radius: 5px;
+  padding: 0 0px;
+  margin: 5px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.AlreadyFilledData > div > p {
+  margin: 5px;
+}
+
+.NewForFill > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--BoxBGClr);
+  border: solid 1px var(--AddVarityElementBorder);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.ProductPrice > div,
+.AddVarityValue > div,
+.FixedDescription > div {
+  /* display: flex; */
+  background-color: var(--AddVarityBGClr);
+  border: solid 1px var(--AddVarityElementBorder);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ProductPrice > div label,
+.AddVarityValue > div label,
+.FixedDescription > div label {
+  display: block;
+  margin: 5px;
+}
+
+.ProductPrice > div input {
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.AddVarityValue > div input,
+.FixedDescription > div input {
+  width: 150px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.Description {
+  width: 95%;
+}
+
+.Description > label {
+  display: block;
+  margin: 5px;
+  padding: 5px;
+}
+
+.Description > textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.ImageUplodeMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1px;
+}
+
+.ImageUplodeMain > label {
+  width: 160px;
+  height: 160px;
+  padding: 10px;
+  background: var(--AddVarityBackground);
+  text-align: center;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.ImageUplodeMain > label > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px dashed var(--AddVarityText);
+  background-position: center;
+  background-size: cover;
+}
+
+.ImageUplodeMain > label > div > img {
+  width: 80px;
+  height: 80px;
+}
+
+.ImageUplodeMain > label > div > p {
+  color: var(--AddVarityElementBorder);
+  margin: 0 5px;
+  padding: 0 5px;
+}
+
+.For3ImageUplode {
+  width: 100%;
+  text-align: center;
+  color: red;
+}
+
+.ForSubmitOrNext {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+ @media only screen and (max-width: 600px) {
+    .ForSubmitOrNext {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

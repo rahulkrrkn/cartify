@@ -1,0 +1,37 @@
+/* Fow Globle */
+:root {
+  --BgColor: #f9f9f9;
+  --Accent: #ff5722;
+  --BoxBGClr: rgb(189, 160, 232);
+  /* Navbar */
+  --NavbarBackground: #7618f1;
+  --NavbarText: #000000;
+  --NavbarActiveText: #000000;
+  --NavbarElementBG: #866bff;
+  --NavbarElementText: #000000;
+  --NavbarActiveElementIcon: #ffffff;
+  /* Footer */
+  --FooterBackground: #7618f1;
+  --FooterText: #fbf9f9;
+  --FooterElementBorder: #a7a6a6;
+  --FooterBGClr: #d2d2d2;
+    /* Brand Colors */
+  --primaryClr: #7618f1;
+  --secondaryClr: #bda0e8;
+}
+.DarkMode {
+  --BgColor: #181818;
+  --Accent: #1e90ff;
+
+  --NavbarBackground: #000000;
+  --NavbarText: #ffffff;
+  --NavbarActiveText: #ffffff;
+  --NavbarElementBG: #000000;
+  --NavbarElementText: #f0f0f0;
+  --NavbarActiveElementIcon: #e97171;
+
+  --FooterBackground: #000000;
+  --FooterText: #e97171;
+  --FooterElementBorder: #f1ecec;
+  --FooterBGClr: #000000;
+}
