@@ -1,0 +1,27 @@
+{
+  "name": "cartify",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/rahulkrrkn/cartify#readme",
+  "bugs": {
+    "url": "https://github.com/rahulkrrkn/cartify/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahulkrrkn/cartify.git"
+  },
+  "license": "ISC",
+  "author": "Rahul Kumar",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.1",
+    "mysql2": "^3.14.5"
+  }
+}

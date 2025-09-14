@@ -2,7 +2,8 @@ import express from "express";
 const app = express();
 import dotenv from "dotenv";
 dotenv.config();
-import { mongoDbConn, sqlConn } from "./config/db.js"
+import { mongoDbConn, sqlConn, sqlPool, testSqlPoolConnection } from "./config/db.js"
+import { initNewWebsite } from "./init/init.js"
 
 // constant define
 const PORT = process.env.PORT || 5000;
@@ -12,8 +13,12 @@ async function serverStart() {
     try {
         // DB Connection
         await mongoDbConn();
+        await testSqlPoolConnection();
         const sqlconn = await sqlConn();
         sqlconn.end();
+        // Checking all table and connection if not then create
+        await initNewWebsite();
+
 
         // Start server
         app.listen(PORT, () => {
@@ -27,6 +32,9 @@ async function serverStart() {
 
 }
 serverStart();
+
+
+
 
 
 
