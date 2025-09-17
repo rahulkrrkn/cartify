@@ -5,8 +5,8 @@ import emailLoginSignup from "./../controllers/auth/email-login-signup.ctrl.js"
 
 // --Working
 // --- Signup / Email flow ---
-router.post("/signup/email/otp", emailLoginSignup.sendOtpToEmail);
-router.post("/login/email/otp", emailLoginSignup.sendOtpToEmail);
+router.post("/signup/email/", emailLoginSignup.sendOtpToEmail);
+router.post("/login/email/", emailLoginSignup.sendOtpToEmail);
 
 
 

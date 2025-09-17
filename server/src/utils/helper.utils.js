@@ -10,9 +10,10 @@ export default {
     isValidEmail: (email) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     },
-    
+
     // Validate mobile no
     isValidMobile: (mobile) => {
         return /^[0-9]{10}$/.test(mobile); // adjust regex for country
     },
+
 }

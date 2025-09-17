@@ -1,12 +1,12 @@
 import express from "express";
+const app = express();
 import dotenv from "dotenv";
+dotenv.config();
 import { mongoDbConn, sqlConn, sqlPool, testSqlPoolConnection } from "./config/db.js"
 import { initNewWebsite } from "./init/init.js"
 import user from "./routes/user.routes.js"
 import auth from "./routes/auth.routes.js"
 
-const app = express();
-dotenv.config();
 
 // get data from frontend
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +18,7 @@ const PORT = process.env.PORT || 5000;
 // database connection check and start server
 async function serverStart() {
     try {
+        /*
         // DB Connection
         await mongoDbConn();
         await testSqlPoolConnection();
@@ -25,7 +26,7 @@ async function serverStart() {
         sqlconn.end();
         // Checking all table and connection if not then create
         await initNewWebsite();
-
+*/
 
         // Start server
         app.listen(PORT, () => {
