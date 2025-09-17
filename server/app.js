@@ -1,9 +1,16 @@
 import express from "express";
-const app = express();
 import dotenv from "dotenv";
-dotenv.config();
 import { mongoDbConn, sqlConn, sqlPool, testSqlPoolConnection } from "./config/db.js"
 import { initNewWebsite } from "./init/init.js"
+import user from "./routes/user.routes.js"
+import auth from "./routes/auth.routes.js"
+
+const app = express();
+dotenv.config();
+
+// get data from frontend
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // constant define
 const PORT = process.env.PORT || 5000;
@@ -34,14 +41,22 @@ async function serverStart() {
 serverStart();
 
 
+// Routes
+app.use("/api/user", user);
+app.use("/api/auth", auth);
 
 
 
 
 
 // Routes
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
     res.send("Welcome");
 });
 
 
+app.use((req, res) => {
+    console.log("404 error");
+    res.status(404).send("<h1>404 Page not found</h1>")
+})
+console.log("End of aap.js")

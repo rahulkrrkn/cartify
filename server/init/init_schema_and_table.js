@@ -36,8 +36,13 @@ async function createUsersTable() {
     const userTable = `CREATE TABLE IF NOT EXISTS users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(50),
     phone VARCHAR(15),
+    password VARCHAR(50),
+    first_name varchar(50) DEFAULT NULL,
+    last_name varchar(50) DEFAULT NULL,
+    dob date DEFAULT NULL,
+    photo varchar(100) DEFAULT NULL,
+    gender enum('Male','Female','Other') DEFAULT NULL,
     role ENUM('user','admin','vendor_owner','vendor_staff') DEFAULT 'user',
     status TINYINT DEFAULT 1 COMMENT '1 = active, 0 = inactive',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -53,9 +58,11 @@ async function createAddressesTable() {
     const addressesTable = `CREATE TABLE IF NOT EXISTS addresses (
     address_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT DEFAULT NULL,
+    full_name VARCHAR(50) NOT NULL,
     full_address VARCHAR(200) NOT NULL,
     postal_code INT NOT NULL,
     phone VARCHAR(15) NOT NULL,
+    email VARCHAR(200) NULL,
     status TINYINT DEFAULT 1 COMMENT '1 = active, 0 = inactive',
     is_default TINYINT DEFAULT 0 
         COMMENT '1 = default address, 0 = normal, otherwise stores PK of previous edited address',
@@ -63,9 +70,9 @@ async function createAddressesTable() {
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
     CONSTRAINT fk_user
-      FOREIGN KEY (user_id) REFERENCES users(user_id)
-      ON DELETE SET NULL
-      ON UPDATE CASCADE
+        FOREIGN KEY (user_id) REFERENCES users(user_id)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
 )`
     await createTable(addressesTable, "Addresses Table")
 
