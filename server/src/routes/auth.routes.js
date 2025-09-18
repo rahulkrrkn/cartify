@@ -1,22 +1,18 @@
 // --Working
 import express from "express";
 const router = express.Router();
-import emailLoginSignup from "./../controllers/auth/email-login-signup.ctrl.js"
+import { verifyEmailOtp, sendOtpToEmail } from "./../controllers/auth/email-login-signup.ctrl.js"
 
-// --Working
+
 // --- Signup / Email flow ---
-router.post("/signup/email/", emailLoginSignup.sendOtpToEmail);
-router.post("/login/email/", emailLoginSignup.sendOtpToEmail);
+router.post("/signup/email/otp", sendOtpToEmail);
+router.post("/login/email/otp", sendOtpToEmail);
 
 
 
 // --Pending
-router.post("/signup/email/verify", (req, res) => {
-    res.json({ route: "/signup/email/verify", body: req.body });
-});
-router.post("/login/email/verify", (req, res) => {
-    res.json({ route: "/login/email/verify", body: req.body });
-});
+router.post("/signup/email/otp/verify", verifyEmailOtp);
+router.post("/login/email/otp/verify", verifyEmailOtp);
 
 
 

@@ -1,5 +1,5 @@
 import Joi from "joi";
-
+import { returnSuccess, returnError } from "./../utils/commonFn.utils.js"
 // Joi schema
 const joiEmailValidator = Joi.object({
     email: Joi.string()
@@ -15,7 +15,8 @@ const joiEmailValidator = Joi.object({
 
 export function emailValidator(rawEmail) {
     if (!rawEmail || typeof rawEmail !== "string") {
-        return { success: false, error: "Email is required" };
+        // return { success: false, error: "Email is required" };
+        return returnError("Email is required")
     }
 
     // Trim and lowercase
@@ -24,7 +25,8 @@ export function emailValidator(rawEmail) {
     // Validate using Joi
     const { error, value } = joiEmailValidator.validate({ email });
     if (error) {
-        return { success: false, error: error.details[0].message };
+        // return { success: false, error: error.details[0].message };
+        return returnError(error.details[0].message)
     }
 
     email = value.email;
@@ -32,7 +34,8 @@ export function emailValidator(rawEmail) {
     // Gmail normalization
     const parts = email.split("@");
     if (parts.length !== 2) {
-        return { success: false, error: "Invalid email format" };
+        // return { success: false, error: "Invalid email format" };
+        return returnError("Invalid email format")
     }
 
     const [local, domain] = parts;
@@ -45,5 +48,5 @@ export function emailValidator(rawEmail) {
         email = `${normalizedLocal}@gmail.com`;
     }
 
-    return { success: true, data: { email }, error: null };
+    return returnSuccess({ email })
 }

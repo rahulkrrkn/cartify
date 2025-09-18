@@ -8,17 +8,17 @@ import user from "./routes/user.routes.js"
 import auth from "./routes/auth.routes.js"
 
 
-// get data from frontend
+// --get data from frontend
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// constant define
+// --constant define
 const PORT = process.env.PORT || 5000;
 
-// database connection check and start server
+// --database connection check and start server
 async function serverStart() {
     try {
-        /*
+        /*--
         // DB Connection
         await mongoDbConn();
         await testSqlPoolConnection();
@@ -41,8 +41,15 @@ async function serverStart() {
 }
 serverStart();
 
+// --Take down invilid request
+app.use((err, req, res, next) => {
+    if (err instanceof SyntaxError && err.status === 400 && "body" in err) {
+        return res.status(400).json({ success: false, message: "Invalid JSON format" });
+    }
+    next();
+});
 
-// Routes
+
 app.use("/api/user", user);
 app.use("/api/auth", auth);
 
