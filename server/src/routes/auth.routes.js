@@ -1,7 +1,7 @@
 // --Working
 import express from "express";
 const router = express.Router();
-import { verifyEmailOtp, sendOtpToEmail } from "./../controllers/auth/email-login-signup.ctrl.js"
+import { verifyEmailOtp, sendOtpToEmail } from "./../controllers/auth.controller.js"
 
 
 // --- Signup / Email flow ---
