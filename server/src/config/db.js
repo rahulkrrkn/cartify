@@ -19,7 +19,7 @@ export const sqlConn = async () => {
 export const mongoDbConn = async () => {
     try {
         await mongoose.connect(process.env.MONGO_DB);
-        console.log("✅ Mongoose Connection successful");
+        console.log("✅ Mongoose Connection success");
         return mongoose.connection;
     } catch (err) {
         console.error("❌ Mongoose Connection failed:", err.message);

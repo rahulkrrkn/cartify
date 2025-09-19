@@ -37,6 +37,7 @@ async function createUsersTable() {
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(50) UNIQUE NOT NULL,
     phone VARCHAR(15),
+    mongo_id VARCHAR(24),
     password VARCHAR(50),
     first_name varchar(50) DEFAULT NULL,
     last_name varchar(50) DEFAULT NULL,
