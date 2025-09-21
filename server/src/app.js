@@ -6,9 +6,10 @@ import cookieParser from "cookie-parser";
 app.use(cookieParser());
 
 import { mongoDbConn, sqlConn, sqlPool, testSqlPoolConnection } from "./config/db.js"
-import { initNewWebsite } from "./init/init.js"
+import { initNewWebsite } from "./../init/init.js"
 import user from "./routes/user.routes.js"
 import auth from "./routes/auth.routes.js"
+import sellerAuth from "./routes/seller.routes.js"
 
 
 // --get data from frontend
@@ -28,7 +29,7 @@ async function serverStart() {
         // const sqlconn = await sqlConn();
         // sqlconn.end();
         // Checking all table and connection if not then create
-        // await initNewWebsite();
+        await initNewWebsite();
 
 
         // Start server
@@ -54,6 +55,7 @@ app.use((err, req, res, next) => {
 
 
 app.use("/api/user", user);
+app.use("/api/auth/seller", sellerAuth);
 app.use("/api/auth", auth);
 
 

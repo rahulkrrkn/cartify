@@ -1,7 +1,7 @@
 // --Working
 import express from "express";
 const router = express.Router();
-import { verifyEmailOtp, sendOtpToEmail, loginWithPassword, sendOtpToMobile, verifyMobileOtp, sendOtpToWhatsapp, verifyWhatsappOtp } from "./../controllers/auth.controller.js"
+import { verifyEmailOtp, sendOtpToEmail, loginWithPassword, sendOtpToMobile, verifyMobileOtp, sendOtpToWhatsapp, verifyWhatsappOtp } from "../controllers/auth/emailOtpLogin.controller.js"
 
 
 // --- Signup / Email flow ---

@@ -1,4 +1,4 @@
-import { sqlPool } from "../config/db.js"
+import { sqlPool } from "../src/config/db.js"
 
 // function for run create query
 async function createTable(query, tableName) {
@@ -80,8 +80,43 @@ async function createAddressesTable() {
 }
 
 
+// Create uer table
+async function createSellerTable() {
+    const sellerTable = `CREATE TABLE IF NOT EXISTS sellers (
+    seller_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT DEFAULT NULL,
+    store_name VARCHAR(50) NOT NULL,
+    status ENUM('pending','active','suspended'),
+
+    store_email VARCHAR(50) UNIQUE NOT NULL,
+    store_phone VARCHAR(20),
+    alt_phone VARCHAR(20),
+    gst_number VARCHAR(50) DEFAULT NULL,
+    shop_pincode VARCHAR(6),
+    full_address VARCHAR(200),
+    store_logo VARCHAR(100) DEFAULT NULL,
+    store_description TEXT,
+    owner_pan VARCHAR(20),
+    business_license VARCHAR(50),
+
+    store_type ENUM('individual','company') DEFAULT 'individual',
+    verified TINYINT(1) DEFAULT 0,
+    kyc_status ENUM('pending','verified','rejected') DEFAULT 'pending',
+
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE SET NULL
+);
+`
+    await createTable(sellerTable, "SELLER Table")
+
+}
 
 
 
 
-export { createUsersTable, showTables, createAddressesTable }
+
+
+
+export { createUsersTable, showTables, createAddressesTable, createSellerTable }

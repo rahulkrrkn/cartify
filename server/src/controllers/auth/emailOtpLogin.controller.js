@@ -1,7 +1,7 @@
-import { sendSuccess, sendError, returnError } from "../utils/commonFn.utils.js";
-import { verifyPassword } from "../services/auth/passwordLogin.service.js";
-import { sendOtp, verifyOtp } from "../services/auth/emailOtp.service.js";
-import { loginOrSignupUser } from "../services/auth/userSignupLogin.service.js";
+import { sendSuccess, sendError, returnError } from "../../utils/commonFn.utils.js";
+import { verifyPassword } from "../../services/auth/passwordLogin.service.js";
+import { sendOtp, verifyOtp } from "../../services/auth/emailOtp.service.js";
+import { loginOrSignupUser } from "../../services/auth/userSignupLogin.service.js";
 
 
 
@@ -19,7 +19,6 @@ export const sendOtpToEmail = async (req, res) => {
 
 
 // --Verify otp and login user
-// pending Login system
 export const verifyEmailOtp = async (req, res) => {
     const { email, otp } = req.body || {};
     if (!email || !otp) return sendError(res, "Email and OTP are required");
