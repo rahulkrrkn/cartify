@@ -1,14 +1,13 @@
+// --Done
+// whatsapp integration remaining when done in /shared/whatsapp/sendWhatsappOtp.js
 import Joi from "joi";
 import Redis from "ioredis";
 const redis = new Redis();
-import { asyncWrap, returnError, sendError, sendSuccess, generateJwtToken } from "../../../../shared/utils/commonFn.utils.js"
+import { asyncWrap, sendError, sendSuccess, generateJwtToken } from "../../../../shared/utils/commonFn.utils.js"
 import { emailNormalization } from "../../../../shared/utils/helperStatus.utils.js"
 import { generateOtp, uniqueId } from "../../../../shared/utils/helperDirect.utils.js"
 import SendEmail from "./../../../../shared/email/sendEmail.js";
 import { sendWhatsappOtp } from "./../../../../shared/whatsapp/sendWhatsappOtp.js";
-
-
-
 
 
 export const sendEmailOtpRoute = async (req, res) => {
@@ -44,9 +43,6 @@ const redisKeySellerWhatsappOtp = async (phone, otp) => {
     const redisKey = "seller:signup:whatsappOtp:" + phone;
     await redis.set(redisKey, otp, "EX", 600, "NX");
 }
-
-
-
 
 export default asyncWrap(async (req, res) => {
     const { error, value } = Joi.object({
