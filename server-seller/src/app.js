@@ -1,15 +1,12 @@
 import express from "express";
-import multer from "multer";
 import authRouter from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
 const app = express();
-const upload = multer(); // memory storage, no file saving
 app.use(cookieParser());
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(upload.none()); // 👈 allows reading form-data (text only)
 
 app.listen(7003, () => {
     console.log("server started at port 7003");

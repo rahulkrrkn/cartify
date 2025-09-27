@@ -8,10 +8,10 @@ import { emailNormalization } from "../../../../shared/utils/helperStatus.utils.
 import { generateOtp, uniqueId } from "../../../../shared/utils/helperDirect.utils.js"
 import SendEmail from "./../../../../shared/email/sendEmail.js";
 import { sendWhatsappOtp } from "./../../../../shared/whatsapp/sendWhatsappOtp.js";
-
-
+import { validateBody } from "../../../../shared/middleware/validateBody.js";
+// Export Send OTP
 export const sendEmailOtpRoute = async (req, res) => {
-    const { error, value } = Joi.object({ email: Joi.string().email().required() }).validate(req.body)
+    const { error, value } = Joi.object({ email: Joi.string().email().required() }).required().label("Data").validate(req.body)
     if (error) return sendError(res, error.message, error.details);
     const tempEmail = emailNormalization(value.email);
     if (!tempEmail.success) return sendError(res, tempEmail.message);
@@ -28,9 +28,9 @@ const redisKeySellerEmailOtp = async (newEmail, otp) => {
     await redis.set(redisKey, otp, "EX", 600, "NX");
 }
 
-
+// Export Send OTP on whatsapp
 export const sendWhatsappOtpRoute = async (req, res) => {
-    const { error, value } = Joi.object({ phone: Joi.string().pattern(/^[0-9]{10}$/).required() }).validate(req.body)
+    const { error, value } = Joi.object({ phone: Joi.string().pattern(/^[0-9]{10}$/).required() }).required().label("Data").validate(req.body)
     if (error) return sendError(res, error.message, error.details);
     const phone = value.phone;
     const whatsappOtp = generateOtp(6);
@@ -43,18 +43,20 @@ const redisKeySellerWhatsappOtp = async (phone, otp) => {
     const redisKey = "seller:signup:whatsappOtp:" + phone;
     await redis.set(redisKey, otp, "EX", 600, "NX");
 }
+const schemaUseValidator = Joi.object({
+    email: Joi.string().email().required().label("Email Id"),
+    phone: Joi.string().pattern(/^[0-9]{10}$/).required().label("Mobile Number"),
+    firstName: Joi.string().min(2).max(50).required().label("First Name"),
+    lastName: Joi.string().min(2).max(50).required().label("Last Name"),
+    email_otp: Joi.number().min(100000).max(999999).integer().required().label("Email OTP"),
+    phone_otp: Joi.number().min(100000).max(999999).integer().required().label("whatsapp OTP"),
+}).required().label("Data")
 
-export default asyncWrap(async (req, res) => {
-    const { error, value } = Joi.object({
-        email: Joi.string().email().required().label("Email Id"),
-        phone: Joi.string().pattern(/^[0-9]{10}$/).required().label("Mobile Number"),
-        firstName: Joi.string().min(2).max(50).required().label("First Name"),
-        lastName: Joi.string().min(2).max(50).required().label("Last Name"),
-        email_otp: Joi.number().min(100000).max(999999).integer().required().label("Email OTP"),
-        phone_otp: Joi.number().min(100000).max(999999).integer().required().label("whatsapp OTP"),
-    }).validate(req.body, { abortEarly: false })
-    if (error) return sendError(res, error.message, error.details.map(err => err.message).join(", "))
-    const { email, phone, firstName, lastName, email_otp, phone_otp } = value;
+// Export Store user data via validation
+
+export default [validateBody(schemaUseValidator), asyncWrap(async (req, res) => {
+
+    const { email, phone, firstName, lastName, email_otp, phone_otp } = req.validatedBody;
     const temp = emailNormalization(email);
     if (!temp.success) {
         return sendError(res, temp.message);
@@ -81,7 +83,7 @@ export default asyncWrap(async (req, res) => {
     });
 
     return sendSuccess(res, "Data Saved success");
-})
+})]
 
 const redisKeySellerWhatsappOtpGet = async (phone) => {
     const redisKey = "seller:signup:whatsappOtp:" + phone;
