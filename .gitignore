@@ -10,7 +10,7 @@
 /backend-marketplace
 /backend-single-shop
 /backend-admin
-/backend-seller
+# /backend-seller
 /backend-support
 /frontend-marketplace
 /frontend-single-shop
@@ -20,3 +20,13 @@
 /shared-libraries
 /database
 /docs
+/server/*
+
+# Universal stop
+temp
+temp.js
+.env
+node_modules
+package-lock.json
+/*/package-lock.json
+uplodes
