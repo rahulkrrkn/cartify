@@ -1,16 +1,27 @@
 import express from "express";
 import authRouter from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
+import mongoConn from "./config/mongoConn.config.js"
+
 const app = express();
+
 app.use(cookieParser());
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(7003, () => {
-    console.log("server started at port 7003");
-});
+
+const startServer = async () => {
+    try {
+        await mongoConn();
+        app.listen(7003, () => console.log(`🚀 Running on ${7003}`));
+    } catch (err) {
+        console.error("❌ DB connection failed", err);
+        process.exit(1);
+    }
+};
+startServer();
 
 // Routes
 app.use("/api/auth", authRouter);
