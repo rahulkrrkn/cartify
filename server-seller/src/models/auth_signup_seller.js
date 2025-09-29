@@ -97,6 +97,7 @@ export default sellerSignup;
 
 
 
+
 // Mongoose schema for users
 const userSchema = new mongoose.Schema(
     {
